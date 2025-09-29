@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "../include/ex2.h"
 
 int calc_dot(int *v1, int *v2, int length)
 {
@@ -19,7 +18,7 @@ int calc_dot(int *v1, int *v2, int length)
     return (0);
 }
 
-int    *make_arr(int length)
+int *make_arr(int length)
 {
     int *arr;
     int i;
@@ -39,33 +38,4 @@ int    *make_arr(int length)
     }
     printf("---------------------------------------\n");
     return (arr);
-}
-
-int main()
-{
-    int length;
-    int *v1;
-    int *v2;
-
-    printf("Enter length of vector\n");
-    scanf("%d", &length);
-    printf("---------------------------------------\n");
-    if (length <= 0)
-    {
-        printf("Error: length should be greater than 0\n");
-        return (1);
-    }
-
-    v1 = make_arr(length);
-    if (!v1)
-        return (1);
-
-    v2 = make_arr(length);
-    if (!v2)
-    {
-        free(v1);
-        return (1);
-    }
-
-    return (calc_dot(v1, v2, length));
 }
